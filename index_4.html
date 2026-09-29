@@ -1,0 +1,189 @@
+ANA MARIA MARCHIONI
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi obra interactiva</title>
+
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 40px 20px;
+            background: #111;
+            color: white;
+        }
+
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+
+        button {
+            display: block;
+            margin: 15px auto;
+            padding: 15px 35px;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+        #reproductor {
+            margin-top: 40px;
+        }
+
+
+        iframe {
+            max-width: 100%;
+            border: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <h1>MI OBRA INTERACTIVA</h1>
+
+
+    <!-- ========================= -->
+    <!--       BOTONES             -->
+    <!-- ========================= -->
+
+
+    <button onclick="mostrarVideo('video1')">
+        VIDEO 1
+    </button>
+
+
+    <button onclick="mostrarVideo('video2')">
+        VIDEO 2
+    </button>
+
+
+    <button onclick="mostrarVideo('video3')">
+        VIDEO 3
+    </button>
+
+
+    <button onclick="mostrarVideo('video4')">
+        VIDEO 4
+    </button>
+
+
+    <button onclick="mostrarVideo('video5')">
+        VIDEO 5
+    </button>
+
+
+    <!-- ========================= -->
+    <!--       REPRODUCTOR         -->
+    <!-- ========================= -->
+
+
+    <div id="reproductor"></div>
+
+
+
+    <script>
+
+
+        // ==========================================
+        // IDs DE LOS VIDEOS DE GOOGLE DRIVE
+        // ==========================================
+
+        const videos = {
+
+            video1: "1Xuno0UbMnFFdgspWBevbRMvWKOB0xJ08",
+
+            video2: "19IolSPaHUXTVp4JCYxs7VJ82SZtERvRW",
+
+            video3: "1pFwDp2umURQIKwiktSqwBmwZs-kWDyeq",
+
+            video4: "118ZRlYqv3U6RBoiBaxEQTzPr4UfrT8VY",
+
+            video5: "1wStiLJlUP_WGKIdRTD5eNgQCYr3xZYOq"
+
+        };
+
+
+
+        // ==========================================
+        // MOSTRAR VIDEO
+        // ==========================================
+
+        function mostrarVideo(video) {
+
+
+            const id = videos[video];
+
+
+            document.getElementById("reproductor").innerHTML = `
+
+                <div>
+
+                    <iframe
+
+                        src="https://drive.google.com/file/d/${id}/preview"
+
+                        width="800"
+
+                        height="450"
+
+                        allow="autoplay"
+
+                        allowfullscreen>
+
+                    </iframe>
+
+
+                    <br><br>
+
+
+                    <button onclick="cerrarVideo()">
+
+                        VOLVER
+
+                    </button>
+
+                </div>
+
+            `;
+
+        }
+
+
+
+        // ==========================================
+        // CERRAR VIDEO
+        // ==========================================
+
+        function cerrarVideo() {
+
+            document.getElementById("reproductor").innerHTML = "";
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
+```
